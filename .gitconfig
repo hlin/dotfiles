@@ -1,0 +1,24 @@
+[user]
+	name = 
+	email = 
+[core]
+	editor = vim
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	di = diff
+	dt = difftool
+	mt = mergetool
+	ol = log --oneline
+	st = status
+[color]
+	ui = true
+[diff]
+	tool = p4merge
+[difftool "p4merge"]
+	cmd = p4merge \\\"$LOCAL\\\" \\\"$REMOTE\\\"
+[merge]
+	tool = p4merge
+[mergetool "p4merge"]
+	cmd = p4merge \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
