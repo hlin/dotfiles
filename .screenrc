@@ -1,0 +1,10 @@
+startup_message off
+
+escape ^Zz
+
+hardstatus on
+hardstatus alwayslastline
+# session: id title hostname(system load) date time weekday
+hardstatus string "%{.bG}%S: %{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %H(%l) %{..Y} %Y/%m/%d %c:%s %D"
+
+vbell off
