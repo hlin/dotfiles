@@ -4,7 +4,12 @@ escape ^Zz
 
 hardstatus on
 hardstatus alwayslastline
+#hardstatus string "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%Y/%m/%d %c:%s  %D "
 # session: id title hostname(system load) date time weekday
 hardstatus string "%{.bG}%S: %{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %H(%l) %{..Y} %Y/%m/%d %c:%s %D"
 
 vbell off
+
+defscrollback 1000
+
+altscreen on
