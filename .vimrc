@@ -1,9 +1,29 @@
-" .vimrc
+"hypo's .vimrc
 
 set nocompatible
 
-filetype plugin on
-filetype indent on
+" configuration for vundle
+set term=xterm-256color
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles :
+"
+" original repos on github
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vimplugin/pydiction'
+Bundle 'suan/vim-instant-markdown'
+
+filetype plugin indent on     " required!
+
+" vim-powerline settings
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
 
 set hlsearch
 set incsearch
@@ -12,9 +32,9 @@ set ai
 set ts=4
 set sw=4
 set et
-set list listchars=tab:>-,trail:.
-" set cursorline
-" set cc=80
+set list
+set listchars=tab:>-,trail:.
+"set cursorline
 
 syntax on
 colorscheme default
@@ -31,8 +51,8 @@ let Tlist_Exit_OnlyWindow=1
 let g:winManagerWindowLayout='FileExplorer|TagList|BufExplorer'
 nmap wm :WMToggle<CR>
 
-" pydiction
-let g:pydiction_location ='/home/hlin/.vimfiles/pydiction-1.2/complete-dict'
+"pydiction
+let g:pydiction_location ='/home/hlin/.vim/bundle/pydiction/complete-dict'
 
 set helplang=cn
 
