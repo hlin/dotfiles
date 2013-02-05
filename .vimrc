@@ -16,8 +16,9 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'vimplugin/pydiction'
 Bundle 'suan/vim-instant-markdown'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on     " required!
 
@@ -50,9 +51,6 @@ let Tlist_Exit_OnlyWindow=1
 
 let g:winManagerWindowLayout='FileExplorer|TagList|BufExplorer'
 nmap wm :WMToggle<CR>
-
-"pydiction
-let g:pydiction_location ='/home/hlin/.vim/bundle/pydiction/complete-dict'
 
 set helplang=cn
 
