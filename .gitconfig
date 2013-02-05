@@ -10,8 +10,10 @@
 	di = diff
 	dt = difftool
 	mt = mergetool
-	ol = log --oneline
+	ol = log --oneline --decorate
 	st = status
+	unstage = reset HEAD --
+	sl = stash list
 [color]
 	ui = true
 [diff]
