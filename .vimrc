@@ -19,6 +19,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
+Bundle 'digitaltoad/vim-jade'
 
 filetype plugin indent on     " required!
 
@@ -32,10 +33,13 @@ set nu
 set ai
 set ts=4
 set sw=4
+set sts=4
 set et
 set list
 set listchars=tab:>-,trail:.
 "set cursorline
+
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 syntax on
 colorscheme default
