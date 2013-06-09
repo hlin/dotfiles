@@ -20,6 +20,8 @@ Bundle 'suan/vim-instant-markdown'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'myhere/vim-nodejs-complete'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on     " required!
 
@@ -40,6 +42,7 @@ set listchars=tab:>-,trail:.
 "set cursorline
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype jade setlocal ts=2 sts=2 sw=2
 
 syntax on
 colorscheme default
