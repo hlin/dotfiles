@@ -54,17 +54,5 @@ autocmd Filetype jade setlocal ts=2 sts=2 sw=2
 syntax on
 colorscheme default
 
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
-let Tlist_Ctags_Cmd='/usr/bin/ctags'
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-
-let g:winManagerWindowLayout='FileExplorer|TagList|BufExplorer'
-nmap wm :WMToggle<CR>
-
 set helplang=cn
 
