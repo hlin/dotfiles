@@ -22,6 +22,7 @@ Bundle 'ervandew/supertab'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myhere/vim-nodejs-complete'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on     " required!
 
@@ -29,6 +30,12 @@ filetype plugin indent on     " required!
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
+" nerdtree settings
+nmap <leader>t :NERDTreeToggle<CR>
+""close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" common settings
 set hlsearch
 set incsearch
 set nu
