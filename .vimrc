@@ -1,4 +1,7 @@
-"hypo's .vimrc
+" hlin's .vimrc
+
+" install vundle first:
+" $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 set nocompatible
 
