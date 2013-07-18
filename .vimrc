@@ -19,8 +19,6 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'suan/vim-instant-markdown'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myhere/vim-nodejs-complete'
