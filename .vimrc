@@ -26,6 +26,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'myhere/vim-nodejs-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'Shougo/neocomplcache.vim'
 
 filetype plugin indent on     " required!
 
@@ -39,6 +40,13 @@ let g:Powerline_symbols = 'fancy'
 nmap <leader>t :NERDTreeToggle<CR>
 ""close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" neocomplcache.vim
+let g:neocomplcache_enable_at_startup = 1
+"" disable autocomplete by default
+let g:neocomplcache_disable_auto_complete = 1
+"" enable autocomplete by press <Tab> key
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 
 " common settings
 set hlsearch
