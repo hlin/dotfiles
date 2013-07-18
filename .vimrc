@@ -27,6 +27,7 @@ Bundle 'myhere/vim-nodejs-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/neocomplcache.vim'
+Bundle 'jtratner/vim-flavored-markdown'
 
 filetype plugin indent on     " required!
 
@@ -47,6 +48,12 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 "" enable autocomplete by press <Tab> key
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+
+" vim-flavored-markdown settings
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 
 " common settings
 set hlsearch
