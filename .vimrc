@@ -30,6 +30,8 @@ Bundle 'scrooloose/nerdtree'
 filetype plugin indent on     " required!
 
 " vim-powerline settings
+" download font Inconsolata-dz-Powerline.otf to ~/fonts
+" from https://gist.github.com/qrush/1595572
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
