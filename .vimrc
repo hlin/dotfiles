@@ -40,11 +40,19 @@ nmap <leader>t :NERDTreeToggle<CR>
 ""close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" neocomplcache.vim
+" neocomplcache settings
+" use neocpmolcache
 let g:neocomplcache_enable_at_startup = 1
-"" disable autocomplete by default
+" disable autopopup by default
 let g:neocomplcache_disable_auto_complete = 1
-"" enable autocomplete by press <Tab> key
+" use smart case
+let g:neocomplcache_enable_smart_case = 1
+" cancel completion by <Backspace> or <C-h>
+inoremap <expr><BS> pumvisible() ? neocomplcache#cancel_popup() : "\<C-h>"
+inoremap <expr><C-h> pumvisible() ? neocomplcache#cancel_popup() : "\<C-h>"
+
+" supertab settings
+" enable autocomplete by <Tab>
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 
 " vim-flavored-markdown settings
