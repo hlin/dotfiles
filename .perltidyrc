@@ -1,0 +1,15 @@
+-b      # Backup and modify in-place
+-se     # Errors to STDERR
+-i=4    # Indent level is 4 cols
+-ci=4   # Continuation indent is 4 cols
+-cti=0  # No extra indentation for closing brackets
+-l=80   # Max line width is 80 cols
+-pt=1   # Most parenthesis tightness
+-bt=1   # Medium brace tightness
+-sbt=1  # Medium square bracket tightness
+-bbt=1  # Medium block brace tightness
+-sbl    # Opening sub braces go on the left (like Linux C style)
+-nsfs   # No space before semicolons
+-nolq   # Don't outdent long quoted strings
+-nolc   # Don't outdent long comment strings
+-iscl   # Ignore the length of side comments when setting line breaks
