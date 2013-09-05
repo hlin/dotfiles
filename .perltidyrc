@@ -8,7 +8,6 @@
 -bt=1   # Medium brace tightness
 -sbt=1  # Medium square bracket tightness
 -bbt=1  # Medium block brace tightness
--sbl    # Opening sub braces go on the left (like Linux C style)
 -nsfs   # No space before semicolons
 -nolq   # Don't outdent long quoted strings
 -nolc   # Don't outdent long comment strings
