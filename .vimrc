@@ -26,6 +26,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'yko/mojo.vim'
 
 filetype plugin indent on     " required!
 
@@ -60,6 +61,9 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+" mojo.vim settings
+let mojo_highlight_data = 1
 
 " common settings
 set hlsearch
