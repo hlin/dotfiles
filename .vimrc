@@ -1,34 +1,37 @@
 " hlin's .vimrc
 
 " install vundle first:
-" $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 set nocompatible
 
 " configuration for vundle
 set term=xterm-256color
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required!
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles :
 "
 " original repos on github
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'ervandew/supertab'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'myhere/vim-nodejs-complete'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'jtratner/vim-flavored-markdown'
-Bundle 'yko/mojo.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'ervandew/supertab'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'myhere/vim-nodejs-complete'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'yko/mojo.vim'
 
-filetype plugin indent on     " required!
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " vim-powerline settings
 " download font Inconsolata-dz-Powerline.otf to ~/fonts
