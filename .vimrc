@@ -21,12 +21,11 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'Lokaltog/vim-powerline'
-" download font Inconsolata-dz-Powerline.otf to ~/fonts
-" from https://gist.github.com/qrush/1595572
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 set term=xterm-256color
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+set noshowmode
 
 Plugin 'scrooloose/nerdtree'
 nmap <leader>t :NERDTreeToggle<CR>
