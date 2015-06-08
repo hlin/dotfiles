@@ -78,12 +78,13 @@ PROMPT='${ret_status} %n@%m %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blu
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
+alias zshrc="vim ~/.zshrc && reload"
+
 alias l="ls"
 alias ll="ls -lh"
 alias la="ls -a"
 alias lla="ls -lah"
 alias cls="clear"
-
-PROMPT='${ret_status} %n@%m %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%% '
