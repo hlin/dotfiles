@@ -8,6 +8,7 @@
 	ci = commit
 	co = checkout
 	di = diff
+	dc = diff --cached
 	dt = difftool
 	mt = mergetool
 	ol = log --oneline --decorate
@@ -15,6 +16,8 @@
 	unstage = reset HEAD --
 	sl = stash list
 	pr = pull --rebase
+	au = update-index --assume-unchanged
+	nau = update-index --no-assume-unchanged
 [color]
 	ui = true
 [diff]
@@ -25,3 +28,5 @@
 	tool = p4merge
 [mergetool "p4merge"]
 	cmd = p4merge \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
+[push]
+	default = simple
