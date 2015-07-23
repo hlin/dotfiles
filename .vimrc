@@ -20,6 +20,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
@@ -31,20 +32,6 @@ Plugin 'scrooloose/nerdtree'
 nmap <leader>t :NERDTreeToggle<CR>
 ""close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-Plugin 'Shougo/neocomplcache.vim'
-" use neocpmolcache
-let g:neocomplcache_enable_at_startup = 1
-" disable autopopup by default
-let g:neocomplcache_disable_auto_complete = 1
-" use smart case
-let g:neocomplcache_enable_smart_case = 1
-" cancel completion by <Backspace> or <C-h>
-inoremap <expr><BS> pumvisible() ? neocomplcache#cancel_popup() : "\<C-h>"
-inoremap <expr><C-h> pumvisible() ? neocomplcache#cancel_popup() : "\<C-h>"
-
-Plugin 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 
 Plugin 'jtratner/vim-flavored-markdown'
 augroup markdown
