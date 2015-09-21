@@ -23,10 +23,10 @@
 [diff]
 	tool = p4merge
 [difftool "p4merge"]
-	cmd = p4merge \\\"$LOCAL\\\" \\\"$REMOTE\\\"
+	cmd = p4merge "$LOCAL" "$REMOTE"
 [merge]
 	tool = p4merge
 [mergetool "p4merge"]
-	cmd = p4merge \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [push]
 	default = simple
