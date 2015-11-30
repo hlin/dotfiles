@@ -15,6 +15,7 @@
 	st = status
 	unstage = reset HEAD --
 	sl = stash list
+	ss = show --stat
 	pr = pull --rebase
 	au = update-index --assume-unchanged
 	nau = update-index --no-assume-unchanged
