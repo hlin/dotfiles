@@ -16,7 +16,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'cespare/vim-toml'
-Plug 'dracula/vim'
+Plug 'dracula/vim', {'as': 'dracula-theme'}
 
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
