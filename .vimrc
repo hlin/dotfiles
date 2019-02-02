@@ -13,7 +13,6 @@ call plug#begin('~/.vim/bundle')
 "
 " original repos on github
 Plug 'digitaltoad/vim-jade'
-Plug 'myhere/vim-nodejs-complete'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'cespare/vim-toml'
