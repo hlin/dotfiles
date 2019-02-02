@@ -21,6 +21,8 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'cespare/vim-toml'
+Plugin 'dracula/vim'
 
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
@@ -58,6 +60,7 @@ set et
 set list
 set listchars=tab:>-,trail:.
 "set cursorline
+set backspace=2
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype jade setlocal ts=2 sts=2 sw=2
@@ -68,6 +71,6 @@ autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 syntax on
-colorscheme default
+colorscheme dracula
 
 set helplang=cn
