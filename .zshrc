@@ -94,3 +94,13 @@ alias ll="ls -lh"
 alias la="ls -a"
 alias lla="ls -lah"
 alias cls="clear"
+
+if [ $commands[brew] ]; then
+    # Homebrew auto update every week
+    export HOMEBREW_AUTO_UPDATE_SECS=604800
+fi
+
+if [[ -e /usr/local/bin/python3 && -e /usr/local/bin/virtualenvwrapper.sh ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
