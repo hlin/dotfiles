@@ -1,52 +1,46 @@
 " hlin's .vimrc
 
-" install vundle first:
-" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Automatic install vim-plug https://github.com/junegunn/vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" configuration for vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required!
-Plugin 'gmarik/Vundle.vim'
-
+" Specify a directory for plugins
+call plug#begin('~/.vim/bundle')
 " My Bundles :
 "
 " original repos on github
-Plugin 'digitaltoad/vim-jade'
-Plugin 'myhere/vim-nodejs-complete'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'cespare/vim-toml'
-Plugin 'dracula/vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'myhere/vim-nodejs-complete'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Valloric/YouCompleteMe'
+Plug 'cespare/vim-toml'
+Plug 'dracula/vim'
 
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 set term=xterm-256color
 set laststatus=2
 set noshowmode
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 nmap <leader>t :NERDTreeToggle<CR>
 ""close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-Plugin 'jtratner/vim-flavored-markdown'
+Plug 'jtratner/vim-flavored-markdown'
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-Plugin 'yko/mojo.vim'
+Plug 'yko/mojo.vim'
 let mojo_highlight_data = 1
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()            " required
 
 " common settings
 set hlsearch
@@ -70,7 +64,4 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
-syntax on
 colorscheme dracula
-
-set helplang=cn
