@@ -12,7 +12,6 @@ call plug#begin('~/.vim/bundle')
 " My Bundles :
 "
 " original repos on github
-Plug 'digitaltoad/vim-jade'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'cespare/vim-toml'
@@ -34,9 +33,6 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
-
-Plug 'yko/mojo.vim'
-let mojo_highlight_data = 1
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
