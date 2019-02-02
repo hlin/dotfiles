@@ -1,2 +1,4 @@
+*.py[oc]
 *.swp
 *~
+.DS_Store
