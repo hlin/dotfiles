@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/hlin/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -45,16 +45,23 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip vagrant autojump pyenv)
+plugins=(git pip vagrant autojump docker)
 
 # User configuration
 
 source $ZSH/oh-my-zsh.sh
 
-PROMPT='${ret_status} %n@%m %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%% '
+function scl_prompt_info() {
+    if [ -n "$X_SCLS" ]; then
+        echo "scl:${X_SCLS}"
+    fi
+}
+
+PROMPT='$(scl_prompt_info)${ret_status} %n@%m %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%% '
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -76,6 +83,8 @@ PROMPT='${ret_status} %n@%m %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blu
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export EDITOR='vim'
 
 alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
 alias zshrc="vim ~/.zshrc && reload"
