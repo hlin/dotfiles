@@ -5,7 +5,7 @@ patch:
   ascii_composer:
     good_old_caps_lock: true
     switch_key:
-      Caps_Lock: commit_code
+      Caps_Lock: noop
       Control_L: noop
       Control_R: noop
       Eisu_toggle: clear
