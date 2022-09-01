@@ -1,5 +1,9 @@
-" Install vim-plug https://github.com/junegunn/vim-plug
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Install vim-plug https://github.com/junegunn/vim-plug automatically
+if empty(glob($HOME.'/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Install plugins
 call plug#begin()
@@ -10,7 +14,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'kyazdani42/nvim-web-devicons' " for colored icons
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 call plug#end()
+
+lua require("bufferline").setup()
 
 " coc configuration
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-html', 'coc-css', 'coc-pyright', '@yaegassy/coc-ansible']
@@ -77,6 +85,7 @@ EOF
 
 " common settings
 set guicursor=a:hor1-blinkwait100-blinkoff100-blinkon100
+set termguicolors
 set hlsearch
 set incsearch
 set ignorecase

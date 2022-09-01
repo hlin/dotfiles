@@ -84,7 +84,7 @@ export LC_ALL=$LANG
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
 alias zshrc="vim ~/.zshrc && reload"
@@ -94,6 +94,7 @@ alias ll="ls -lh"
 alias la="ls -a"
 alias lla="ls -lah"
 alias cls="clear"
+alias vi="nvim"
 
 if [ $commands[brew] ]; then
     # Homebrew auto update every week
