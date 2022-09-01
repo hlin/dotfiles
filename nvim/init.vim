@@ -16,6 +16,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'kyazdani42/nvim-web-devicons' " for colored icons
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 lua require("bufferline").setup()
