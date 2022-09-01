@@ -45,7 +45,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip vagrant autojump docker)
+plugins=(git pip vagrant autojump docker golang oc)
 
 # User configuration
 
@@ -104,4 +104,8 @@ fi
 if [[ -e /usr/local/bin/python3 && -e /usr/local/bin/virtualenvwrapper.sh ]]; then
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
     source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [ -f ~/.zshrc_custom ]; then
+    source ~/.zshrc_custom
 fi
