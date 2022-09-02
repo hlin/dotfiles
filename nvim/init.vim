@@ -7,16 +7,41 @@ endif
 
 " Install plugins
 call plug#begin()
+"" A library provides lua functions used by many plugins
+Plug 'nvim-lua/plenary.nvim'
+
+"" File explorer
+Plug 'preservim/nerdtree'
+
+"" Fuzzy finder
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
+"" Color scheme
 Plug 'dracula/vim', {'as': 'dracula-theme'}
+
+"" Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+"" Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"" Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'kyazdani42/nvim-web-devicons' " for colored icons
+
+"" Bufferline
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'kyazdani42/nvim-web-devicons'
+
+"" Reopen files at your last edit position
 Plug 'farmergreg/vim-lastplace'
+
+"" Tag viewer
+"" Requires universal-ctags `brew install universal-ctags`
+Plug 'preservim/tagbar'
+
+"" Comment stuff out
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 lua require("bufferline").setup()
