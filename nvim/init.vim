@@ -1,3 +1,9 @@
+" ====== NeoVim configuration ======
+"
+" It's recommended to install one patched fonts for telescope, bufferline, etc
+" https://github.com/ryanoasis/nerd-fonts for example FiraCode
+" ==================================
+
 " Install vim-plug https://github.com/junegunn/vim-plug automatically
 if empty(glob($HOME.'/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -136,3 +142,18 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd BufRead,BufNewFile Jenkinsfile,*.Jenkinsfile set filetype=groovy
 
 colorscheme dracula
+
+" Key mapping
+let mapleader=" "
+"" normal mode
+nnoremap Q :q<CR>
+nnoremap S :w<CR>
+nnoremap bn :bnext<CR>
+nnoremap bp :bprevious<CR>
+nnoremap nt :NERDTreeToggle<CR>
+nnoremap <C-a> <Home>
+nnoremap <C-e> <End>
+
+"" insert mode
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
