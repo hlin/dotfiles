@@ -188,6 +188,10 @@ nnoremap bp :bprevious<CR>
 nnoremap nt :NERDTreeToggle<CR>
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 "" insert mode
 inoremap <C-a> <Home>
