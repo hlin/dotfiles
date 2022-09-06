@@ -185,11 +185,12 @@ let mapleader=" "
 "" normal mode
 nnoremap Q :q<CR>
 nnoremap S :w<CR>
-nnoremap bn :bnext<CR>
-nnoremap bp :bprevious<CR>
-nnoremap nt :NvimTreeToggle<CR>
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>nt :NvimTreeToggle<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
