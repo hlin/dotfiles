@@ -17,7 +17,7 @@ call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 
 "" File explorer
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 
 "" Fuzzy finder
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -54,6 +54,8 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 call plug#end()
 
 lua require("bufferline").setup()
+
+lua require("nvim-tree").setup()
 
 " coc configuration
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-html', 'coc-css', 'coc-pyright', '@yaegassy/coc-ansible']
@@ -185,7 +187,7 @@ nnoremap Q :q<CR>
 nnoremap S :w<CR>
 nnoremap bn :bnext<CR>
 nnoremap bp :bprevious<CR>
-nnoremap nt :NERDTreeToggle<CR>
+nnoremap nt :NvimTreeToggle<CR>
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
