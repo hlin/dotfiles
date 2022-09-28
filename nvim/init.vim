@@ -168,6 +168,7 @@ set list
 set listchars=tab:>-,trail:.
 set backspace=2
 set nofoldenable
+set relativenumber
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype jade setlocal ts=2 sts=2 sw=2
