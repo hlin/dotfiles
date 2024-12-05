@@ -84,6 +84,12 @@ export LC_ALL=$LANG
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [ -d "/opt/homebrew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    # Homebrew auto update every week
+    export HOMEBREW_AUTO_UPDATE_SECS=604800
+fi
+
 export EDITOR='nvim'
 
 alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
@@ -95,15 +101,11 @@ alias la="ls -a"
 alias lla="ls -lah"
 alias cls="clear"
 alias vi="nvim"
+alias pm="podman"
 
-if [ $commands[brew] ]; then
-    # Homebrew auto update every week
-    export HOMEBREW_AUTO_UPDATE_SECS=604800
-fi
-
-if [[ -e /usr/local/bin/python3 && -e /usr/local/bin/virtualenvwrapper.sh ]]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-    source /usr/local/bin/virtualenvwrapper.sh
+if [[ -e $HOMEBREW_PREFIX/bin/python3 && -e $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=$HOMEBREW_PREFIX/bin/python3
+    source $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh
 fi
 
 if [ -f ~/.zshrc_custom ]; then
