@@ -153,6 +153,7 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 EOF
 
 " common settings
+set mouse=
 set guicursor=a:hor1-blinkwait100-blinkoff100-blinkon100
 set termguicolors
 set hlsearch
