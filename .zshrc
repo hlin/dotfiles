@@ -108,6 +108,6 @@ if [[ -e $HOMEBREW_PREFIX/bin/python3 && -e $HOMEBREW_PREFIX/bin/virtualenvwrapp
     source $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/.zshrc_custom ]; then
-    source ~/.zshrc_custom
+if [ -f ~/.zshrc.custom ]; then
+    source ~/.zshrc.custom
 fi
