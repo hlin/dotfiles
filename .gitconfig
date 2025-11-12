@@ -2,32 +2,37 @@
 	name = 
 	email = 
 [core]
-	editor = vim
+    editor = nvim
+    pager = less -FRX
 [alias]
-	br = branch
-	ci = commit
-	co = checkout
-	di = diff
-	dc = diff --cached
-	dt = difftool
-	mt = mergetool
-	ol = log --oneline --decorate
-	st = status
-	unstage = reset HEAD --
-	sl = stash list
-	ss = show --stat
-	pr = pull --rebase
-	au = update-index --assume-unchanged
-	nau = update-index --no-assume-unchanged
+    br = branch
+    ci = commit
+    co = checkout
+    di = diff
+    dc = diff --cached
+    dt = difftool
+    mt = mergetool
+    ol = log --oneline --decorate
+    st = status
+    unstage = reset HEAD --
+    sl = stash list
+    ss = show --stat
+    pr = pull --rebase
+    au = update-index --assume-unchanged
+    nau = update-index --no-assume-unchanged
+    # pull gitlab merge request, git mr <remote> <merge request id>, e.g. git mr upstream 305
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+    # pull github pull request, git gh <remote> <pull request id>, e.g. git gh upstream 101
+    gh = !sh -c 'git fetch $1 pull/$2/head:pr$2 && git checkout pr$2' -
 [color]
-	ui = true
+    ui = true
 [diff]
-	tool = p4merge
+    tool = p4merge
 [difftool "p4merge"]
-	cmd = p4merge "$LOCAL" "$REMOTE"
+    cmd = p4merge "$LOCAL" "$REMOTE"
 [merge]
-	tool = p4merge
+    tool = p4merge
 [mergetool "p4merge"]
-	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [push]
-	default = simple
+    default = simple
