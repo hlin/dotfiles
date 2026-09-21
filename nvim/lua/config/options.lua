@@ -53,4 +53,6 @@ opt.sidescrolloff = 8
 opt.mouse = "a"
 
 -- dracula theme
+-- Keep a syntax-engine fallback for filetypes without a Treesitter parser.
+vim.cmd("syntax enable")
 vim.cmd.colorscheme("dracula")

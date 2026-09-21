@@ -7,10 +7,15 @@ local parsers = {
     "python",
     "javascript",
     "typescript",
+    "tsx",
     "json",
     "yaml",
     "toml",
     "bash",
+    "html",
+    "css",
+    "markdown",
+    "markdown_inline",
 }
 
 -- 启动时安装缺失的 parser
@@ -18,7 +23,7 @@ require("nvim-treesitter").install(parsers)
 
 -- 打开文件时启动 Treesitter
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = parsers,
+    pattern = "*",
     callback = function()
         pcall(vim.treesitter.start)
     end,
