@@ -31,6 +31,16 @@ zstyle ':prompt:pure:host' show yes
 source "$HOME/.antidote/antidote.zsh"
 antidote load
 
+# Ctrl+W: kill only one path component (stop at `/`).
+# zsh's default WORDCHARS contains `/`, so plain `backward-kill-word` eats the whole path.
+# Removing `/` locally makes the widget delete up to the previous directory separator.
+backward-kill-dir() {
+  local WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+  zle backward-kill-word
+}
+zle -N backward-kill-dir
+bindkey '^W' backward-kill-dir
+
 # Pure prompt: always show username@host (not only over SSH/root/container)
 zstyle ':prompt:pure:user' color cyan
 zstyle ':prompt:pure:host' color cyan
