@@ -61,6 +61,29 @@ zstyle ':prompt:pure:git:branch' color 208         # git branch: orange
 zstyle ':prompt:pure:git:branch:cached' color 172  # git branch when data is cached: dim orange
 zstyle :prompt:pure:git:dirty detailed yes         # differentiate between unstaged (*), staged (+), and untracked (?) changes
 
+# Non-local shell marker: tag the preprompt when this is not the local machine.
+# Detected once at startup, since these flags do not change for a given shell.
+typeset -g PROMPT_ENV_TAG=
+if [[ -n ${KUBERNETES_SERVICE_HOST-} ]]; then
+    PROMPT_ENV_TAG=k8s                                    # pod
+elif [[ -f /.dockerenv ]]; then
+    PROMPT_ENV_TAG=docker                                 # docker container
+elif [[ -f /run/.containerenv || -n ${container-} ]]; then
+    PROMPT_ENV_TAG=${${container:-podman}:t}              # podman / systemd-nspawn
+elif [[ -n ${SSH_CONNECTION-}${SSH_TTY-}${PROMPT_PURE_SSH_CONNECTION-} ]]; then
+    PROMPT_ENV_TAG=ssh                                    # ssh, also in nested shells
+elif [[ -n ${WSL_DISTRO_NAME-} ]]; then
+    PROMPT_ENV_TAG=wsl
+fi
+[[ -n $PROMPT_ENV_TAG ]] && PROMPT_ENV_TAG="[$PROMPT_ENV_TAG]"
+
+# Pure renders psvar[22] as the custom prefix on the preprompt line.
+prompt_pure_precustom() {
+    psvar[22]=$PROMPT_ENV_TAG
+}
+# Color can also be set per environment, e.g. 214=ssh, 45=docker, 33=k8s.
+zstyle ':prompt:pure:custom:prefix' color 214              # orange: stands out on dark backgrounds
+
 # ls colors: macOS / Linux
 if [[ "$OSTYPE" == darwin* ]]; then
     export CLICOLOR=1
