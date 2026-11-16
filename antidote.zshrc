@@ -56,6 +56,7 @@ zstyle ':prompt:pure:host' color cyan
 psvar[13]=1
 
 # Pure prompt colors
+# https://color-palette.hexdocs.pm/ansi_color_codes.html
 zstyle ':prompt:pure:path' color 39                # path: DeepSkyBlue
 zstyle ':prompt:pure:git:branch' color 208         # git branch: orange
 zstyle ':prompt:pure:git:branch:cached' color 172  # git branch when data is cached: dim orange
