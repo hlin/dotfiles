@@ -52,13 +52,28 @@ zstyle ':prompt:pure:git:branch' color 208         # git branch: orange
 zstyle ':prompt:pure:git:branch:cached' color 172  # git branch when data is cached: dim orange
 zstyle :prompt:pure:git:dirty detailed yes         # differentiate between unstaged (*), staged (+), and untracked (?) changes
 
+# ls colors: macOS / Linux
+if [[ "$OSTYPE" == darwin* ]]; then
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+
+    alias ls='ls -G'
+    alias ll='ls -lhG'
+    alias la='ls -lahG'
+
+elif [[ "$OSTYPE" == linux* ]]; then
+    if command -v dircolors >/dev/null 2>&1; then
+        eval "$(dircolors -b)"
+    fi
+
+    alias ls='ls --color=auto'
+    alias ll='ls -lh --color=auto'
+    alias la='ls -lah --color=auto'
+fi
+
 # Alias
 alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
 alias zshrc="vim ~/.zshrc && reload"
-alias l="ls"
-alias ll="ls -lh"
-alias la="ls -a"
-alias lla="ls -lah"
 alias cls="clear"
 alias vi="nvim"
 alias pm="podman"
