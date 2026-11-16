@@ -24,22 +24,6 @@ zstyle ':completion:*' matcher-list \
 autoload -Uz compinit
 compinit -C
 
-# Git branch
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-zstyle ':vcs_info:git:*' formats '(%b)'
-zstyle ':vcs_info:git:*' actionformats '(%b|%a)'
-
-# Prompt
-#setopt PROMPT_SUBST
-#PROMPT='%F{green}%n@%m%f: %F{blue}%~%f ${vcs_info_msg_0_} %# '
-
-# Extra config
-if [ -f $HOME/.zshrc.custom ]; then
-    source ~/.zshrc.custom
-fi
-
 # Read by plugins at load/setup time, so must come before `antidote load`
 zstyle ':prompt:pure:host' show yes
 
@@ -53,9 +37,10 @@ zstyle ':prompt:pure:host' color cyan
 psvar[13]=1
 
 # Pure prompt colors
-zstyle ':prompt:pure:path' color 39              # path: DeepSkyBlue
-zstyle ':prompt:pure:git:branch' color 208       # git branch: orange
+zstyle ':prompt:pure:path' color 39                # path: DeepSkyBlue
+zstyle ':prompt:pure:git:branch' color 208         # git branch: orange
 zstyle ':prompt:pure:git:branch:cached' color 172  # git branch when data is cached: dim orange
+zstyle :prompt:pure:git:dirty detailed yes         # differentiate between unstaged (*), staged (+), and untracked (?) changes
 
 # Alias
 alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
@@ -67,3 +52,8 @@ alias lla="ls -lah"
 alias cls="clear"
 alias vi="nvim"
 alias pm="podman"
+
+# Extra config
+if [ -f $HOME/.zshrc.custom ]; then
+    source ~/.zshrc.custom
+fi
