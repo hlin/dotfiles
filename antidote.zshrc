@@ -16,6 +16,15 @@ setopt INTERACTIVE_COMMENTS
 # Delete key
 bindkey '^[[3~' delete-char
 
+# Homebrew: among other things this adds $HOMEBREW_PREFIX/share/zsh/site-functions
+# to fpath, where formula completions live (_uv, _kubectl, _helm, _rg, ...).
+# It must run before compinit, otherwise those completions are not found.
+if [ -d "/opt/homebrew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    # Homebrew auto update every week
+    export HOMEBREW_AUTO_UPDATE_SECS=604800
+fi
+
 # Completion
 zstyle ':completion:*' matcher-list \
   'm:{a-z}={A-Z}' \
