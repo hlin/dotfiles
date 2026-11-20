@@ -105,10 +105,12 @@ elif [[ "$OSTYPE" == linux* ]]; then
 fi
 
 # Alias
+if command -v nvim >/dev/null 2>&1; then
+    alias vi="nvim"
+fi
 alias reload="source ~/.zshrc && echo ~/.zshrc reloaded"
-alias zshrc="vim ~/.zshrc && reload"
+alias zshrc="vi ~/.zshrc && reload"
 alias cls="clear"
-alias vi="nvim"
 alias pm="podman"
 
 # Extra config
